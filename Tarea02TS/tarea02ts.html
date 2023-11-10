@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ej01.js"></script>
+    <script src="ejercicio02.js"></script>
+    <script src="ejercicio03.js"></script>
+</head>
+<body>
+    <h1>Tarea 2</h1>
+    <div class="container">
+        <h2>Ejercicio 1</h2>
+        <div>
+            <h3>Tabla del 9</h3>
+            <button onclick="tablaNueve()">Mostrar la tabla del 9</button>
+            <ul id="resultadoTabla"></ul>
+        </div>
+        <div>
+            <h3>Secuencia de Fibonacci</h3>
+            <button onclick="fibonacci()">Mostrar la secuencia de Fibonacci</button>
+            <p id="secuencia"></p>
+        </div>
+        <div>
+            <h3>Número primo</h3>
+            <label for="numeroInput">Introduce tu número</label>
+            <input type="number" id="numeroInput"/>
+            <button onclick= "numerosPrimos()">Comprobar</button>
+            <p id="resultado"></p>
+        </div>
+        <h2>Ejercicio 2</h2>
+        <div>
+            <button onclick= "tuEdad()">Introduce tu edad</button>
+        </div>
+        <h2>Ejercicio 3</h2>
+        <div>
+            <button onclick= "desplazandoBits()">Resultado</button>
+            <ul>
+                <li id="resultado-1"></li>
+                <li id="resultado-2"></li>
+                <li id="resultado-3"></li>
+                <li id="resultado-4"></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
