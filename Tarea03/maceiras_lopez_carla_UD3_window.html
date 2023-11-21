@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventana Nueva</title>
+  <script>
+    let ventanaEmergente;
+
+    function abrirVentana() {
+      // Pide permiso al usuario
+      const permiso = confirm("¿Quieres abrir una nueva ventana?");
+      if (!permiso) return;
+
+      // Abre una nueva ventana con las propiedades especificadas
+      ventanaEmergente = window.open("", "", "width=300,height=300,toolbar=no,menubar=no,top=400,left=400");
+
+      // Comprueba si la ventana se abrió correctamente
+      if (!ventanaEmergente) {
+        alert("No se pudo abrir la nueva ventana.");
+        return;
+      }
+
+      // Contenido de la nueva ventana
+      const contenidoVentana = `
+        <h3>Exemplo de Ventá nova</h3>
+        <p>URL: ${window.location.href}</p>
+        <p>Protocolo: ${window.location.protocol}</p>
+        <p>Navegador: ${navigator.userAgent}</p>
+        <p>Java está dispoñible: ${navigator.javaEnabled() ? 'Sí' : 'Non'}</p>
+      `;
+
+      ventanaEmergente.document.body.innerHTML = contenidoVentana;
+    }
+
+    function cerrarVentana() {
+      // Cierra la ventana remota y muestra un mensaje de error si ya está cerrada
+      if (ventanaEmergente && !ventanaEmergente.closed) {
+        ventanaEmergente.close();
+      } else {
+        alert("La ventana remota ya está cerrada.");
+      }
+    }
+
+    function desplazarVentana() {
+      // Desplaza la ventana usando moveBy y moveTo
+      ventanaEmergente.moveBy(50, 50);
+      ventanaEmergente.moveTo(400, 400);
+    }
+
+    function aumentarTamanio() {
+      // Aumenta el tamaño de la ventana
+      ventanaEmergente.resizeBy(50, 50);
+    }
+
+    function redimensionarVentana() {
+      // Redimensiona la ventana a un tamaño específico
+      ventanaEmergente.resizeTo(500, 500);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="abrirVentana()">Abrir Ventana</button>
+  <button onclick="cerrarVentana()">Cerrar Ventana</button>
+  <button onclick="desplazarVentana()">Desplazar Ventana</button>
+  <button onclick="aumentarTamanio()">Aumentar Tamaño</button>
+  <button onclick="redimensionarVentana()">Redimensionar Ventana</button>
+</body>
+</html>
