@@ -8,20 +8,16 @@
     let ventanaEmergente;
 
     function abrirVentana() {
-      // Pide permiso al usuario
       const permiso = confirm("¿Quieres abrir una nueva ventana?");
       if (!permiso) return;
 
-      // Abre una nueva ventana con las propiedades especificadas
       ventanaEmergente = window.open("", "", "width=300,height=300,toolbar=no,menubar=no,top=400,left=400");
 
-      // Comprueba si la ventana se abrió correctamente
       if (!ventanaEmergente) {
         alert("No se pudo abrir la nueva ventana.");
         return;
       }
 
-      // Contenido de la nueva ventana
       const contenidoVentana = `
         <h3>Exemplo de Ventá nova</h3>
         <p>URL: ${window.location.href}</p>
@@ -34,7 +30,6 @@
     }
 
     function cerrarVentana() {
-      // Cierra la ventana remota y muestra un mensaje de error si ya está cerrada
       if (ventanaEmergente && !ventanaEmergente.closed) {
         ventanaEmergente.close();
       } else {
@@ -43,18 +38,15 @@
     }
 
     function desplazarVentana() {
-      // Desplaza la ventana usando moveBy y moveTo
       ventanaEmergente.moveBy(50, 50);
       ventanaEmergente.moveTo(400, 400);
     }
 
     function aumentarTamanio() {
-      // Aumenta el tamaño de la ventana
       ventanaEmergente.resizeBy(50, 50);
     }
 
     function redimensionarVentana() {
-      // Redimensiona la ventana a un tamaño específico
       ventanaEmergente.resizeTo(500, 500);
     }
   </script>
